@@ -1,0 +1,9 @@
+<div *ngIf="hero" class="box details-box">
+  <h2>Details über <br>{{hero.name | uppercase}}</h2>
+  <div><span>ID: </span>{{hero.id}}</div>
+  <div>
+    <label>Namen ändern: <input [(ngModel)]="hero.name" placeholder="name"></label><button (click)="save()">Speichern</button>
+  </div>
+  <br>
+  <button (click)="goBack()">Zurück</button>
+</div>

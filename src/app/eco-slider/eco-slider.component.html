@@ -1,0 +1,27 @@
+<h2>Stromkostenrechner</h2>
+<div>
+  <div>Wie hoch ist dein Jahresverbrauch?
+    <mat-slider
+    class="example-margin"
+    [disabled]="disabled"
+    [invert]="invert"
+    [max]="max"
+    [min]="min"
+    [step]="step"
+    [thumbLabel]="thumbLabel"
+    [tickInterval]="tickInterval"
+    [(ngModel)]="value"
+    [vertical]="vertical">
+    </mat-slider>
+    kWh
+  </div>
+  <label>
+    Wie hoch ist dein Arbeitspreis?
+    <input [(ngModel)]="workingPrice" />
+    Cent / kWh
+  </label>
+</div>
+<div>
+  <h4>So hoch sind deine variablen Stromkosten (pro Jahr): </h4>
+  <div>Variable Stromkosten <strong>{{value*workingPrice/100 | currency:'EUR':'symbol'}}</strong></div>
+</div>
